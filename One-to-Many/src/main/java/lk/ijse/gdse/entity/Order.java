@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table (name = "orders")
 @Entity
+
+//Owning side - foreign key
+
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

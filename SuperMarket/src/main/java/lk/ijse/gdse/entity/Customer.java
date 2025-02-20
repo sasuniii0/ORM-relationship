@@ -7,20 +7,22 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
 @Table(name = "customer")
 
-// inverse side
+//inverse side
 
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "customerId")
+    private String id;
     private String name;
+    private String nic;
+    private String email;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     private List<Order> orders;
 }
