@@ -16,5 +16,6 @@ public class Customer {
     private int id;
     private String name;
     @OneToOne
-    private IDCard idcard;
+    @JoinColumn(name = "nicNumber")
+    private IDCard idCard;
 }

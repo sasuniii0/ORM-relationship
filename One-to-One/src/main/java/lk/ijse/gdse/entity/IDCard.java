@@ -15,6 +15,6 @@ public class IDCard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int nicNumber;
-    @OneToOne
+    @OneToOne(mappedBy = "idCard")
     private Customer customer;
 }
