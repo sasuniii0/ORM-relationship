@@ -14,7 +14,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@ToString
 @Table(name = "customer")
 
 //inverse side
@@ -27,8 +26,8 @@ public class Customer {
     private String nic;
     private String email;
 
-    /*@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-    private List<Order> orders;*/
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    private List<Order> orders;
 
 /*
     inverse side eke relationship danne natuw apita puluwn table hadanna.

@@ -15,9 +15,6 @@ import java.util.List;
 
 @Getter
 @Setter
-/*
-@ToString
-*/
 @Table(name = "orders")
 
 //Owning side

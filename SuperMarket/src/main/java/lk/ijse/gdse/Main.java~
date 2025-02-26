@@ -44,20 +44,19 @@ public class Main {
         //session2.delete(customer);
         session2.remove(customer);*/
 
-        // eager fetching... one query for all
         Session session = FactoryConfiguration.getInstance().getSession();
         Customer customer = session.get(Customer.class, "C001");
-        System.out.println(customer.getId());
-        System.out.println(customer.getName());
-        System.out.println(customer.getNic());
-        System.out.println(customer.getEmail());
-
-        // lazy fetching... each query for each data
         Customer customer1 = session.load(Customer.class, "C002");
+
         System.out.println(customer1.getId());
         System.out.println(customer1.getName());
         System.out.println(customer1.getNic());
         System.out.println(customer1.getEmail());
+
+        System.out.println(customer.getId());
+        System.out.println(customer.getName());
+        System.out.println(customer.getNic());
+        System.out.println(customer.getEmail());
 
         List<Order> orderList = customer.getOrders();
         System.out.println(orderList);
@@ -69,9 +68,6 @@ public class Main {
         (Query for each fetching..)
 
         parent patte dagnna one fetching...
-
-        hibernate 5 wala wge wda krnne dn api inne hibernate 6 wala
-        load eka lazy fetching widihta thamai wada krnne...
         */
 
     }
