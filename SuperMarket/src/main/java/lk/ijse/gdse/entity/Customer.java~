@@ -29,9 +29,4 @@ public class Customer {
 
     /*@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     private List<Order> orders;*/
-
-/*
-    inverse side eke relationship danne natuw apita puluwn table hadanna.
-    eth apita ba orders ekta customer eka hadaddi save krnna
-*/
 }
