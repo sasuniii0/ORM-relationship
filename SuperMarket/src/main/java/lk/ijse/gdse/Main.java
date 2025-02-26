@@ -8,14 +8,13 @@ import org.hibernate.Transaction;
 
 public class Main {
     public static void main(String[] args) {
-        Session session1 = FactoryConfiguration.getInstance().getSession();
 
         /*transient state*/
         Customer customer = new Customer();
         customer.setName("john doe");
 
         /*persistance state*/
-        session1 = FactoryConfiguration.getInstance().getSession();
+        Session session1 = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session1.beginTransaction();
 
         /*detached state*/
