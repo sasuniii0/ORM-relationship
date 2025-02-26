@@ -13,7 +13,7 @@ public class Main {
         Customer customer = new Customer();
         customer.setName("john doe");
 
-        /*persistance state*/
+        /*persistence state*/
         Session session1 = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session1.beginTransaction();
 
