@@ -53,6 +53,7 @@ public class Main {
         System.out.println(customer.getEmail());
 
         // lazy fetching... each query for each data
+        // default fetching eka wenne lazy fetching
         Customer customer1 = session.load(Customer.class, "C002");
         System.out.println(customer1.getId());
         System.out.println(customer1.getName());
