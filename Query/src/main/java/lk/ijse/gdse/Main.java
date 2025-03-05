@@ -1,7 +1,11 @@
 package lk.ijse.gdse;
 
+import lk.ijse.gdse.config.FactoryConfiguration;
+import org.hibernate.Session;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Session session = FactoryConfiguration.getInstance().getSession();
+        session.close();
     }
 }
