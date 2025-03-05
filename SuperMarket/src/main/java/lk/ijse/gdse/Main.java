@@ -12,23 +12,25 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-       /* *//*transient state*//*
+   /*    //transient state
         Customer customer = new Customer();
         customer.setName("john doe");
 
-        *//*persistence state*//*
+        //persistence state
         Session session1 = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session1.beginTransaction();
 
-        *//*detached state*//*
+       //detached state
         // not in use  --> session.save(customer);
         session1.persist(customer);
         transaction.commit();
 
-        *//*removed state*//*
+        //removed state
         session1.close();
 
-        *//*without use object --> eligible to GC--> Garbage Collection*//*
+*//*
+    without use object --> eligible to GC--> Garbage Collection
+*//*
 
         //edited object
         customer.setName("jane doe");
@@ -40,10 +42,10 @@ public class Main {
         //update krnn puluwn --> session.update(customer);
         session2.merge(customer);
 
-        *//*removed state*//*
+        //removed state
         //session2.delete(customer);
-        session2.remove(customer);*/
-
+        session2.remove(customer);
+*/
         // eager fetching... one query for all
         Session session = FactoryConfiguration.getInstance().getSession();
         Customer customer = session.get(Customer.class, "C001");
